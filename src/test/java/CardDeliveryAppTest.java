@@ -8,19 +8,16 @@ import static com.codeborne.selenide.Selenide.*;
 
 public class CardDeliveryAppTest {
 
-    @BeforeEach
-    void SetUpAll() {
+    @Test
+    void shouldConfirmCardDelivery() {
+
         String name = DataGenerator.CardDeliveryRequest.generateByUserInfo().getName();
         String date = DataGenerator.CardDeliveryRequest.generateByUserInfo().getDate();
         String city = DataGenerator.CardDeliveryRequest.generateByUserInfo().getCity();
         String phone = DataGenerator.CardDeliveryRequest.generateByUserInfo().getPhone();
-    }
-
-    @Test
-    void shouldConfirmCardDelivery() {
 
         open("http://localhost:9999");
-        $("[data-test-id=city] input").setValue(DataGenerator.CardDeliveryRequest.generateByUserInfo().getCity());
+        $("[data-test-id=city] input").setValue(city);
         $("[data-test-id=date] input").sendKeys(Keys.chord(Keys.CONTROL, "a", Keys.DELETE));
         $("[data-test-id=date] input").setValue(date);
         $("[data-test-id=name] input").setValue(name);
