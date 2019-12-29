@@ -9,4 +9,5 @@ public class CardDeliveryRequestByUserInfo {
     private final String phone;
     private final String city;
     private final String date;
+    private final String newdate;
 }
