@@ -14,6 +14,7 @@ public class CardDeliveryAppTest {
         String date = DataGenerator.CardDeliveryRequest.generateByUserInfo().getDate();
         String city = DataGenerator.CardDeliveryRequest.generateByUserInfo().getCity();
         String phone = DataGenerator.CardDeliveryRequest.generateByUserInfo().getPhone();
+        String newdate = DataGenerator.CardDeliveryRequest.generateByUserInfo().getNewdate();
 
         open("http://localhost:9999");
         $("[data-test-id=city] input").setValue(city);
@@ -28,7 +29,7 @@ public class CardDeliveryAppTest {
         $("[data-test-id=city] input").sendKeys(Keys.chord(Keys.CONTROL, "a", Keys.DELETE));
         $("[data-test-id=city] input").setValue(city);
         $("[data-test-id=date] input").sendKeys(Keys.chord(Keys.CONTROL, "a", Keys.DELETE));
-        $("[data-test-id=date] input").setValue(date);
+        $("[data-test-id=date] input").setValue(newdate);
         $("[data-test-id=name] input").sendKeys(Keys.chord(Keys.CONTROL, "a", Keys.DELETE));
         $("[data-test-id=name] input").setValue(name);
         $("[data-test-id=phone] input").sendKeys(Keys.chord(Keys.CONTROL, "a", Keys.DELETE));
