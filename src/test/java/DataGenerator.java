@@ -20,12 +20,15 @@ public class DataGenerator {
             instance.setTime(dateNow);
             instance.add(Calendar.DAY_OF_MONTH, 3);
             String confirmedDate = formatForDateNow.format(instance.getTime());
+            instance.add(Calendar.DAY_OF_MONTH, 1);
+            String anotherDate = formatForDateNow.format(instance.getTime());
 
             return new CardDeliveryRequestByUserInfo(
                     faker.name().fullName(),
                     faker.phoneNumber().phoneNumber(),
                     faker.address().city(),
-                    confirmedDate
+                    confirmedDate,
+                    anotherDate
             );
         }
     }
