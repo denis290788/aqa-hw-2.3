@@ -26,7 +26,7 @@ public class DataGenerator {
             return new CardDeliveryRequestByUserInfo(
                     faker.name().fullName(),
                     faker.phoneNumber().phoneNumber(),
-                    faker.address().city(),
+                    City.getRandom().getCityName(),
                     confirmedDate,
                     anotherDate
             );
